@@ -4,7 +4,7 @@ DROP TABLE tags;
 
 CREATE TABLE tags (
     id SERIAL PRIMARY KEY, 
-    category INT
+    category VARCHAR(255)
 );
 
 CREATE TABLE merchants (
