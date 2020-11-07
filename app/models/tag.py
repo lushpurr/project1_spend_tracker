@@ -1,3 +1,3 @@
 class Tag:
-    def __init__(self, type, id = None):
-        self.type = type
+    def __init__(self, category, id = None):
+        self.category = category
