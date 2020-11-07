@@ -9,10 +9,10 @@ import repositories.transaction_repository as transaction_repository
 
 # transaction_repository.delete_all()
 # tag_repository.delete_all()
-# merchant_repository.delete_all()
+merchant_repository.delete_all()
 
-# merchant1 = Merchant('BP')
-# merchant_repository.save(merchant1)
+merchant1 = Merchant('BP')
+merchant_repository.save(merchant1)
 
 # tag1 = Tag('Fuel')
 # tag_repository.save(tag1)
