@@ -7,7 +7,7 @@ import repositories.merchant_repository as merchant_repository
 
 def save(transaction):
     sql = "INSERT INTO transactions ( amount, merchant_id, tag_id ) VALUES ( %s, %s, %s ) RETURNING id"
-    values = [transaction.id, transaction.merchant.id, transaction.tag.id]
+    values = [transaction.amount, transaction.merchant.id, transaction.tag.id]
     results = run_sql( sql, values )
     transaction.id = results[0]['id']
     return transaction
