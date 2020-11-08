@@ -12,13 +12,13 @@ def transactions():
     transactions = transaction_repository.select_all() # NEW
     return render_template("transactions/index.html", transactions = transactions)
 
-# # NEW
-# # GET '/visits/new'
-# @visits_blueprint.route("/visits/new", methods=['GET'])
-# def new_task():
-#     users = user_repository.select_all()
-#     locations = location_repository.select_all()
-#     return render_template("visits/new.html", users = users, locations = locations)
+# NEW
+# GET '/transactions/new'
+@transactions_blueprint.route("/transactions/new", methods=['GET'])
+def new_task():
+    merchants = merchant_repository.select_all()
+    tags = tag_repository.select_all()
+    return render_template("transactions/new.html", merchants = merchants, tags = tags)
 
 # # CREATE
 # # POST '/visits'
