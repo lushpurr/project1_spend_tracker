@@ -25,7 +25,18 @@
             <td></td>
             <td>{{ transaction.tag.category }}</td>
             <td></td>
-            <td><i><img src="/static/images/edit_icon.svg" alt=""></i><i><img src="/static/images/delete_icon.svg" alt=""></i></td>
+            <td>
+                <i>
+                    <a href="/transactions/edit">
+                        <img src="/static/images/edit_icon.svg" alt="edit icon">
+                    </a>
+                </i>
+                <i>
+                    <a href="/transactions/delete">
+                        <img src="/static/images/delete_icon.svg" alt="">
+                    </a>
+                </i>
+                </td>
         </tr>
             
         {% endfor %}

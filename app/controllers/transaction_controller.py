@@ -34,9 +34,9 @@ def create_transaction():
     return redirect("/transactions")
 
 
-# # DELETE
-# # DELETE '/visits/<id>'
-# @visits_blueprint.route("/visits/<id>/delete", methods=['POST'])
-# def delete_task(id):
-#     visit_repository.delete(id)
-#     return redirect('/visits')
+
+# DELETE '/transactions/<id>'
+@transactions_blueprint.route("/transactions/<id>/delete", methods=['POST'])
+def delete_task(id):
+    transaction_repository.delete(id)
+    return redirect('/transactions')
