@@ -6,7 +6,14 @@
 <form action="/transactions" method="POST">
     <div>
         <label for="merchant">Merchant:</label>
-        <input type="text" id="merchant" name="merchant">
+        <select name="merchant_id" id="merchant">
+            {% for merchant in merchants %}
+            <option value= "{{ merchant.id }}">
+                {{ merchant.name}}
+            </option>"
+                
+            {% endfor %}
+        </select>
     </div>
 
     <div>
@@ -20,8 +27,15 @@
     </div>
 
     <div>
-        <label for="amount">Category:</label>
-        <input type="text" id="category" name="category">
+        <label for="tag">Category:</label>
+        <select name="tag_id" id="tag">
+            {% for tag in tags %}
+            <option value= "{{ tag.id }}">
+                {{ tag.category}}
+            </option>"
+                
+            {% endfor %}
+        </select>
     </div>
 
 
