@@ -7,6 +7,8 @@
         <tr>
             <th>Merchant</th>
             <th></th>
+            <th>City</th>
+            <th></th>
             <th>Amount</th>
             <th></th>   
             <th>Tag</th>
@@ -16,6 +18,8 @@
         {% for transaction in transactions %}
         <tr>
             <td>{{ transaction.merchant.name}}</td>
+            <td></td>
+            <td>{{ transaction.merchant.city }}</td>
             <td></td>
             <td>{{ transaction.amount }}</td>
             <td></td>

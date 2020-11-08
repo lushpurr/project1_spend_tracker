@@ -11,10 +11,10 @@ transaction_repository.delete_all()
 tag_repository.delete_all()
 merchant_repository.delete_all()
 
-merchant1 = Merchant('BP')
+merchant1 = Merchant('BP', 'Glasgow')
 merchant_repository.save(merchant1)
 
-merchant2 = Merchant('Wetherspoons')
+merchant2 = Merchant('Wetherspoons', "Carlisle")
 merchant_repository.save(merchant2)
 
 tag1 = Tag('Fuel')

@@ -3,7 +3,8 @@
 {% block content %}
 <h1>Merchants</h1>
 {% for merchant in merchants %}
-    {{ merchant.name }}
+    <p>{{ merchant.name }}</p>
+    <p>{{ merchant.city }}</p>
 
 {% endfor %}
 <ul>
