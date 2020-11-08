@@ -22,13 +22,14 @@ def new_task():
 
 # # CREATE
 # POST '/transactions'
+@transactions_blueprint.route("/transactions", methods=["POST"])
 def create_transaction():
+    amount = request.form["amount"]
     merchant_id = request.form["merchant_id"]
     merchant = merchant_repository.select(merchant_id)
-    amount = request.form("amount")
     tag_id = request.form["tag_id"]
     tag = tag_repository.select(tag_id)
-    new_transaction = Transaction(merchant, amount, tag)
+    new_transaction = Transaction(amount, merchant, tag)
     transaction_repository.save(new_transaction)
     return redirect("/transactions")
 
