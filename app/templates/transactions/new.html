@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Transaction</h2>
+
+<form action="/transactions" method="POST">
+    <div>
+        <label for="merchant">Merchant:</label>
+        <input type="text" id="merchant" name="merchant">
+    </div>
+
+    <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+    </div>
+
+    <div>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount">
+    </div>
+
+    <div>
+        <label for="amount">Category:</label>
+        <input type="text" id="category" name="category">
+    </div>
+
+
+
+
+    <div>
+    <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

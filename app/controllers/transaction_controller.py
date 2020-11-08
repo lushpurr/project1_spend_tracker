@@ -21,17 +21,17 @@ def new_task():
     return render_template("transactions/new.html", merchants = merchants, tags = tags)
 
 # # CREATE
-# # POST '/visits'
-# @visits_blueprint.route("/visits",  methods=['POST'])
-# def create_task():
-#     user_id = request.form['user_id']
-#     location_id = request.form['location_id']
-#     review = request.form['review']
-#     user = user_repository.select(user_id)
-#     location = location_repository.select(location_id)
-#     visit = Visit(user, location, review)
-#     visit_repository.save(visit)
-#     return redirect('/visits')
+# POST '/transactions'
+def create_transaction():
+    pass
+    # amount = request.form["amount"]
+
+    # zombie_type_id = request.form["zombie_type_id"]
+    # zombie_type = zombie_type_repository.select(zombie_type_id)
+    # new_zombie = Zombie(name, zombie_type)
+    # zombie_repository.save(new_zombie)
+    # return redirect("/zombies")@transactions_blueprint.route("/transactions",  methods=['POST'])
+
 
 
 # # DELETE

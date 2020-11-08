@@ -17,7 +17,7 @@ def tags():
 
 @tags_blueprint.route("/tags/new")
 def new_tag():
-    return render_template(tags/new.html)
+    return render_template("tags/new.html")
 
 
 
