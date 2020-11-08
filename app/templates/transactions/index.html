@@ -31,11 +31,20 @@
                         <img src="/static/images/edit_icon.svg" alt="edit icon">
                     </a>
                 </i>
+
+
                 <i>
-                    <a href="/transactions/delete">
-                        <img src="/static/images/delete_icon.svg" alt="">
-                    </a>
+                    <form action="/transactions/{{ transaction.id }}/delete" method="POST">
+                        <input class="btn btn--danger" type="submit" value="delete" />
+                      </form>
                 </i>
+
+
+
+
+
+
+
                 </td>
         </tr>
             
