@@ -23,15 +23,14 @@ def new_task():
 # # CREATE
 # POST '/transactions'
 def create_transaction():
-    pass
-    # amount = request.form["amount"]
-
-    # zombie_type_id = request.form["zombie_type_id"]
-    # zombie_type = zombie_type_repository.select(zombie_type_id)
-    # new_zombie = Zombie(name, zombie_type)
-    # zombie_repository.save(new_zombie)
-    # return redirect("/zombies")@transactions_blueprint.route("/transactions",  methods=['POST'])
-
+    merchant_id = request.form["merchant_id"]
+    merchant = merchant_repository.select(merchant_id)
+    amount = request.form("amount")
+    tag_id = request.form["tag_id"]
+    tag = tag_repository.select(tag_id)
+    new_transaction = Transaction(merchant, amount, tag)
+    transaction_repository.save(new_transaction)
+    return redirect("/transactions")
 
 
 # # DELETE
