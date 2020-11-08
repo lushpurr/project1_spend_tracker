@@ -17,7 +17,9 @@
         </tr>
         {% for transaction in transactions %}
         <tr>
-            <td>{{ transaction.merchant.name}}</td>
+            <td> <a href="/transactions/{{ transaction.id }}/edit">
+                {{ transaction.merchant.name}}
+            </a></td>
             <td></td>
             <td>{{ transaction.merchant.city }}</td>
             <td></td>
@@ -27,9 +29,7 @@
             <td></td>
             <td>
                 <i>
-                    <a href="/transactions/edit">
-                        <img src="/static/images/edit_icon.svg" alt="edit icon">
-                    </a>
+
                 </i>
 
 
