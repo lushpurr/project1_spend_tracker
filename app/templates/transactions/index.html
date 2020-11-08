@@ -10,10 +10,18 @@
             <th>Amount</th>
             <th></th>   
             <th>Tag</th>
+            <th></th>
+            <th>Icons</th>
         </tr>
         {% for transaction in transactions %}
         <tr>
             <td>{{ transaction.merchant.name}}</td>
+            <td></td>
+            <td>{{ transaction.amount }}</td>
+            <td></td>
+            <td>{{ transaction.tag.category }}</td>
+            <td></td>
+            <td><i><img src="/static/images/edit_icon.svg" alt=""></i><i><img src="/static/images/delete_icon.svg" alt=""></i></td>
         </tr>
             
         {% endfor %}
