@@ -7,8 +7,13 @@ merchants_blueprint = Blueprint("merchants", __name__)
 
 @merchants_blueprint.route("/merchants")
 def merchants():
-    merchants = merchant_repository.select_all() # NEW
+    merchants = merchant_repository.select_all() # INDEX
     return render_template("merchants/index.html", merchants = merchants)
+
+# NEW
+@merchants_blueprint.route("/merchants/new")
+def new_merchant():
+    return render_template("merchants/new.html")
 
 # CREATE
 @merchants_blueprint.route("/merchants", methods=["POST"])
