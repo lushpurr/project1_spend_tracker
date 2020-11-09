@@ -27,13 +27,6 @@ def create_merchant():
 @merchants_blueprint.route("/merchants/<id>/edit", methods=["POST"])
 def edit_merchant(id):
     merchant = merchant_repository.select(id)
-
-    # # amount = transaction_repository.select(id)
-
-    # merchants = merchant_repository.select_all()
-
-    # tags = tag_repository.select_all()
-
     return render_template('merchants/edit.html', merchant=merchant)
 
 #UPDATE

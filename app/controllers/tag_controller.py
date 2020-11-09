@@ -30,24 +30,26 @@ def create_tag():
     return redirect("/tags")
 
 
-# # EDIT
-# @humans_blueprint.route("/humans/<id>/edit")
-# def edit_human(id):
-#     human = human_repository.select(id)
-#     return render_template('humans/edit.html', human=human)
+# EDIT
+@tags_blueprint.route("/tags/<id>/edit", methods=["POST"])
+def edit_tag(id):
+    tag = tag_repository.select(id)
+    return render_template('tags/edit.html', tag=tag)
+
+#UPDATE
+@tags_blueprint.route("/tags/<id>", methods=["POST"])
+def update_tag(id):
+    category = request.form["category"]
+    tag = Tag(category, id)
+    tag_repository.update(tag) 
+    return redirect("/tags")
 
 
-# # UPDATE
-# @humans_blueprint.route("/humans/<id>", methods=["POST"])
-# def update_human(id):
-#     name = request.form["name"]
-#     human = Human(name, id)
-#     human_repository.update(human)
-#     return redirect("/humans")
 
 
-# # DELETE
-# @humans_blueprint.route("/humans/<id>/delete", methods=["POST"])
-# def delete_human(id):
-#     human_repository.delete(id)
-#     return redirect("/humans")
+
+# DELETE '/tags/<id>'
+@tags_blueprint.route("/tags/<id>/delete", methods=['POST'])
+def delete_task(id):
+    tag_repository.delete(id)
+    return redirect('/tags')

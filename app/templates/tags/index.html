@@ -1,11 +1,40 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>Tags</h1>
-{% for tag in tags %}
-    <p>{{ tag.category }}</p>
+<h1>All Tags</h1>
 
-{% endfor %}
+<table>
+    <tr>
+        <th>Tags</th>
+        <th></th>
+        <th>Icons</th>
+    </tr>
+    
+    {% for tag in tags %}
+    <tr>
+        <td>
+            <a href="/tags/{{ tag.category }}/edit">
+            {{ tag.category }}
+            </a>
+        </td>   
+        <td></td>
+        <td>
+            <i>
+                <form action="/tags/{{ tag.id }}/delete" method="POST">
+                    <input class="btn btn--danger" type="submit" value="delete" />
+                    </form>
+            </i>
+
+            <i>
+                <form action="/tags/{{ tag.id }}/edit" method="POST">
+                    <input class="btn btn--danger" type="submit" value="edit" />
+                </form>
+            </i>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
 <ul>
     <li><a href="/tags/new">Create New</a></li>
 </ul>
