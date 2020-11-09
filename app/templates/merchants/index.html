@@ -19,19 +19,17 @@
         </td>   
         <td></td>
         <td>
-            
-                <form action="/merchants/{{ merchant.id }}/delete" method="POST">
-                    <button type="submit" value="delete" />
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </form>
+            <form action="/merchants/{{ merchant.id }}/delete" method="POST">
+                <button type="submit" value="delete" />
+                    <i class="fa fa-trash"></i>
+                </button>
+            </form>
 
-                <form action="/merchants/{{ merchant.id }}/edit" method="POST">
-                    <button type="submit" value="delete" />
-                        <i class="fa fa-edit"></i>
-                    </button>
-                </form>
-            
+            <form action="/merchants/{{ merchant.id }}/edit" method="POST">
+                <button type="submit" value="delete" />
+                    <i class="fa fa-edit"></i>
+                </button>
+            </form>
         </td>
     </tr>
     {% endfor %}

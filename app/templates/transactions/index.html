@@ -15,9 +15,9 @@
         </tr>
         {% for transaction in transactions %}
         <tr>
-            <td> <a href="/transactions/{{ transaction.id }}/edit">
+            <td> 
                 {{ transaction.merchant.name}}
-            </a></td>
+            </td>
             <td></td>
             <td>{{ transaction.amount }}</td>
             <td></td>
@@ -25,19 +25,18 @@
             <td></td>
             <td>
 
-
-            <i>
                 <form action="/transactions/{{ transaction.id }}/delete" method="POST">
-                    <input class="btn btn--danger" type="submit" value="delete" />
-                    </form>
-            </i>
-
-            <i>
-                <form action="/transactions/{{ transaction.id }}/edit" method="POST">
-                    <input class="btn btn--danger" type="submit" value="edit" />
+                    <button type="submit" value="delete" />
+                        <i class="fa fa-trash"></i>
+                    </button>
                 </form>
-            </i>
-
+    
+                <form action="/transactions/{{ transaction.id }}/edit" method="POST">
+                    <button type="submit" value="delete" />
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </form>
+            </td>   
         </tr>
             
         {% endfor %}

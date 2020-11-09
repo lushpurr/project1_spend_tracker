@@ -19,17 +19,17 @@
         </td>   
         <td></td>
         <td>
-            <i>
-                <form action="/tags/{{ tag.id }}/delete" method="POST">
-                    <input class="btn btn--danger" type="submit" value="delete" />
-                    </form>
-            </i>
+            <form action="/tags/{{ tag.id }}/delete" method="POST">
+                <button type="submit" value="delete" />
+                    <i class="fa fa-trash"></i>
+                </button>
+            </form>
 
-            <i>
-                <form action="/tags/{{ tag.id }}/edit" method="POST">
-                    <input class="btn btn--danger" type="submit" value="edit" />
-                </form>
-            </i>
+            <form action="/tags/{{ tag.id }}/edit" method="POST">
+                <button type="submit" value="delete" />
+                    <i class="fa fa-edit"></i>
+                </button>
+            </form>
         </td>
     </tr>
     {% endfor %}
