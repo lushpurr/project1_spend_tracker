@@ -35,6 +35,27 @@ def create_transaction():
 
 
 
+# # EDIT
+# @transactions_blueprint.route("/transaction/<id>/edit")
+# def edit_transaction(id):
+#     transaction = transaction_repository.select(id)
+
+#     merchant = merchant_repository.select_all()
+#     tag = tag_repository.select_all()
+#     return render_template('transactions/edit.html', transaction = transaction, merchant=merchant, tag=tag)
+
+
+# # UPDATE
+# @transactions_blueprint.route("/transactions/<id>", methods=["POST"])
+# # def update_transaction(id):
+# #     amount = request.form["amount"]
+# #     merchant_id = request.form["merchant_id"]
+# #     zombie_type = zombie_type_repository.select(zombie_type_id)
+# #     zombie = Zombie(name, zombie_type, id)
+# #     zombie_repository.update(zombie)
+# #     return redirect("/zombies")
+
+
 # DELETE '/transactions/<id>'
 @transactions_blueprint.route("/transactions/<id>/delete", methods=['POST'])
 def delete_task(id):
