@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.tag import Tag
 
 def save(tag):
-    sql = "INSERT INTO tags( category ) VALUES ( %s ) RETURNING id"
-    values = [tag.category]
+    sql = "INSERT INTO tags( category, active ) VALUES ( %s, %s ) RETURNING id"
+    values = [tag.category, tag.active]
     results = run_sql( sql, values )
     tag.id = results[0]['id']
     return tag
@@ -16,7 +16,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        tag = Tag(row['category'], row['id'])
+        tag = Tag(row['category'], row['active'], row['id'])
         tags.append(tag)
     return tags
 
@@ -28,7 +28,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        tag = Tag(result['category'], result['id'] )
+        tag = Tag(result['category'], result['active'], result['id'] )
     return tag
 
 
@@ -42,6 +42,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(tag):
-    sql = "UPDATE tags SET category = %s WHERE id = %s"
-    values = [tag.category, tag.id]
+    sql = "UPDATE tags SET ( category, active ) = ( %s, %s ) WHERE id = %s"
+    values = [tag.category, tag.active, tag.id]
     run_sql(sql, values)
