@@ -30,7 +30,7 @@
             <select name="tag_id" id="tag">
                 {% for tag in tags %}
                 <option value="{{ tag.id }}" {% if tag.id == transaction.tag.id %} selected {% endif %}>
-                    {{ tag.name }}
+                    {{ tag.category }}
                 </option>
                 {% endfor %}
             </select>

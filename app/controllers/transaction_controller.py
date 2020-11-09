@@ -36,7 +36,7 @@ def create_transaction():
 
 
 # # EDIT
-@transactions_blueprint.route("/transactions/<id>/edit")
+@transactions_blueprint.route("/transactions/<id>/edit", methods=["POST"])
 def edit_transaction(id):
     transaction = transaction_repository.select(id)
 
