@@ -28,16 +28,19 @@
             <td>{{ transaction.tag.category }}</td>
             <td></td>
             <td>
-                <i>
-
-                </i>
 
 
-                <i>
-                    <form action="/transactions/{{ transaction.id }}/delete" method="POST">
-                        <input class="btn btn--danger" type="submit" value="delete" />
-                      </form>
-                </i>
+            <i>
+                <form action="/transactions/{{ transaction.id }}/delete" method="POST">
+                    <input class="btn btn--danger" type="submit" value="delete" />
+                    </form>
+            </i>
+
+            <i>
+                <form action="/transactions/{{ transaction.id }}/edit" method="POST">
+                    <input class="btn btn--danger" type="submit" value="edit" />
+                </form>
+            </i>
 
 
 
@@ -51,6 +54,6 @@
         {% endfor %}
     </table>
     <ul>
-        <li><a href="/transaction/new">Create New</a></li>
+        <li><a href="/transactions/new">Create New</a></li>
     </ul>
 {% endblock content %}

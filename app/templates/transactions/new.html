@@ -4,6 +4,12 @@
 <h2>Add a New Transaction</h2>
 
 <form action="/transactions" method="POST">
+
+    <div>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount">
+    </div>
+    
     <div>
         <label for="merchant">Merchant:</label>
         <select name="merchant_id" id="merchant">
@@ -15,11 +21,7 @@
             {% endfor %}
         </select>
     </div>
-
-
-    <div>
-        <label for="amount">Amount:</label>
-        <input type="text" id="amount" name="amount">
+    <div class = "add_new_option"><a href="/merchants/new">Add new merchant</a>
     </div>
 
     <div>
@@ -32,6 +34,8 @@
                 
             {% endfor %}
         </select>
+    </div>
+    <div class = "add_new_option"><a href="/tags/new">Add new tag</a>
     </div>
 
 
