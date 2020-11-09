@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.merchant import Merchant
 
 def save(merchant):
-    sql = "INSERT INTO merchants( name, city ) VALUES ( %s, %s ) RETURNING id"
-    values = [merchant.name, merchant.city]
+    sql = "INSERT INTO merchants( name ) VALUES ( %s ) RETURNING id"
+    values = [merchant.name,]
     results = run_sql( sql, values )
     merchant.id = results[0]['id']
     return merchant
@@ -16,7 +16,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        merchant = Merchant(row['name'], row['city'], row['id'])
+        merchant = Merchant(row['name'], row['id'])
         merchants.append(merchant)
     return merchants
 
@@ -28,7 +28,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        merchant = Merchant(result['name'], result['city'], result['id'] )
+        merchant = Merchant(result['name'], result['id'] )
     return merchant
 
 
