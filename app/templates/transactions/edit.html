@@ -8,6 +8,7 @@
         <label for="amount">Amount:</label>
         <input type="text" id="amount" name="amount" value="{{ transaction.amount }}">
     </div>
+
     
     <div>
         <label for="merchant">Merchant:</label>
@@ -25,7 +26,7 @@
 
 
         <div>
-            <label for="tag">Human:</label>
+            <label for="tag">Tag:</label>
             <select name="tag_id" id="tag">
                 {% for tag in tags %}
                 <option value="{{ tag.id }}" {% if tag.id == transaction.tag.id %} selected {% endif %}>
@@ -34,5 +35,10 @@
                 {% endfor %}
             </select>
         </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+
 
 {% endblock %}
