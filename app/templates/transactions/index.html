@@ -41,6 +41,16 @@
         </tr>
             
         {% endfor %}
+
+        <tr>
+            <th>Total</th>
+            <th></th>
+            <td>{{ transactions | sum(attribute='amount') }}</td>
+            <th></th>
+            <th></th>
+            <th></th>
+
+        </tr>
     </table>
     <ul>
         <li><a href="/transactions/new">Create New</a></li>
