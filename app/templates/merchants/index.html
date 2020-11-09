@@ -1,12 +1,44 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>Merchants</h1>
-{% for merchant in merchants %}
-    <p>{{ merchant.name }}</p>
-    <p>{{ merchant.city }}</p>
+<h1>All Merchants</h1>
 
-{% endfor %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th></th>
+        <th>City</th>
+        <th></th>
+        <th>Icons</th>
+    </tr>
+    
+    {% for merchant in merchants %}
+    <tr>
+        <td>
+            <a href="/merchants/{{ merchant.name }}/edit">
+            {{ merchant.name }}
+            </a>
+        </td>   
+        <td></td>
+        <td>{{ merchant.city }}</td>
+        <td></td>
+        <td>
+            <i>
+                <form action="/merchants/{{ merchant.id }}/delete" method="POST">
+                    <input class="btn btn--danger" type="submit" value="delete" />
+                    </form>
+            </i>
+
+            <i>
+                <form action="/merchants/{{ merchant.id }}/edit" method="POST">
+                    <input class="btn btn--danger" type="submit" value="edit" />
+                </form>
+            </i>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
 <ul>
     <li><a href="/merchants/new">Create New</a></li>
 </ul>
