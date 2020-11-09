@@ -11,17 +11,28 @@
     
     <div>
         <label for="merchant">Merchant:</label>
-        <input type="text" id="merchant" name="merchant" value="{{ transaction.merchant.name }}">
+        <select name="merchant_id" id="merchant">
+            {% for merchant in merchants %}
+            <option value="{{ merchant.id }}" {% if merchant.id == transaction.merchant.id %} selected {% endif %}>
+                {{ merchant.name }}
+            </option>
+                
+            {% endfor %}
+        </select>
     </div>
     
-    <div>
-        <label for="tag">Name:</label>
-        <input type="text" id="tag" name="tag" value="{{ transaction.tag.category }}">
-    </div>
 
-    <div>
-        <input type="submit">
-    </div>
-</form>
+
+
+        <div>
+            <label for="tag">Human:</label>
+            <select name="tag_id" id="tag">
+                {% for tag in tags %}
+                <option value="{{ tag.id }}" {% if tag.id == transaction.tag.id %} selected {% endif %}>
+                    {{ tag.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
 
 {% endblock %}

@@ -36,17 +36,17 @@ def create_transaction():
 
 
 # # EDIT
-@transactions_blueprint.route("/transaction/<id>/edit")
+@transactions_blueprint.route("/transactions/<id>/edit")
 def edit_transaction(id):
     transaction = transaction_repository.select(id)
 
-    amount = transaction_repository.select(id)
+    # amount = transaction_repository.select(id)
 
     merchants = merchant_repository.select_all()
 
     tags = tag_repository.select_all()
 
-    return render_template('transactions/edit.html', transaction = transaction, amount = amount, merchants=merchants, tags=tags)
+    return render_template('transactions/edit.html', transaction=transaction, merchants=merchants, tags=tags)
 
 
 # # UPDATE
