@@ -24,7 +24,11 @@
             <td></td>
             <td>£{{ "%.2f" % transaction.amount }}</td>
             <td></td>
-            <td>{{ transaction.tag.category }}</td>
+            <td>
+                <form action="/tags/{{ transaction.tag.id }}/edit" method="POST">
+                    <button class = "btn-link" type="submit">{{ transaction.tag.category }}</button>
+                </form>
+            </td>
             <td></td>
             <td>
 
