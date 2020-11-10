@@ -28,7 +28,7 @@ def create_tag():
     active = request.form["active"]
     new_tag = Tag(category, active)
     tag_repository.save(new_tag)
-    return redirect("/tags")
+    return redirect("/transactions")
 
 
 # EDIT
