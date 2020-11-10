@@ -76,6 +76,14 @@ th {
 
 }
 
+/* active / inactive colours */
+
+td .active {
+  color: green;
+}
+td .inactive {
+  color: red;
+}
 
 /* Menus*/
 nav ul li {
