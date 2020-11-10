@@ -16,6 +16,10 @@ a {
   display:inline-block;
 }
 
+#filters {
+  display:inline-block;
+}
+
 a:hover 
 {
   color:red;

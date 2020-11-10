@@ -2,7 +2,28 @@
 
 {% block content %}
     <h2>All Transactions (<a href="/transactions/new"><i class="fa fa-plus" aria-hidden="true" title="add new transaction"></i></a>)</h2></th> 
+    <section id="filters">
+        
+        <form action="/transactions" method="POST">
+        <div>
+            <label for="tag">Tag:</label>
+                <select name="tag_id" id="tag">
+                    {% for tag in tags %}
+                    {% if tag.active %}
+                    <option value= "{{ tag.id }}">
+                        {{ tag.category}}
+                    </option>"
+                    {% endif %}
+                        
+                    {% endfor %}
+                </select>
+        </div>
+        </form>
+        
 
+
+        
+    </section>
     <table>
         <tr>
             <th>Merchant (<a href="/merchants/new"><i class="fa fa-plus" aria-hidden="true" title="add new merchant"></i></a>)</th>
