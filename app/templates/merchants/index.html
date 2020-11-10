@@ -1,5 +1,4 @@
 {% extends 'base.html'%}
-
 {% block content %}
 <h1>All Merchants</h1>
 
@@ -9,14 +8,10 @@
         <th></th>
         <th>Icons</th>
     </tr>
-    
     {% for merchant in merchants %}
+    <section class="list-container">
     <tr>
-        <td>
-            <a href="/merchants/{{ merchant.name }}/edit">
-            {{ merchant.name }}
-            </a>
-        </td>   
+        <td> {{ merchant.name }}</td>   
         <td></td>
         <td>
             <form action="/merchants/{{ merchant.id }}/delete" method="POST">
@@ -31,8 +26,9 @@
                 </button>
             </form>
         </td>
-
+      
     </tr>
+    </section>
     {% endfor %}
 </table>
 

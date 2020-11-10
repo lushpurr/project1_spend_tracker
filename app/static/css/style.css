@@ -12,6 +12,7 @@ body {
 h1 { 
     font-family: 'Phosphate';
     font-size: 3em;
+    text-align: center;
 }
 
 .top_main {
@@ -25,9 +26,34 @@ h1 {
     
 }
 
+td {
+  border: dashed;
+  border-width: 2px;
+  padding: 10px;
+  border-radius: 5%;
+}
+
+th {
+  border: dashed;
+  border-width: 2px;
+  padding: 10px;
+  border-radius: 5%;
+
+}
+
+section.list-container td tr{
+  background-color: papayawhip;
+
+}
+
 #content {
-    width:80%;
+    width:50%;
     margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
 
     /* display:flex;
     flex-direction: column; */
@@ -50,7 +76,7 @@ nav ul li {
 
 
 /* table style */
-
+/* 
 table {
     display: flex;
     flex-flow: column nowrap;
@@ -76,4 +102,4 @@ th {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-  } */ 
+  } */  */
