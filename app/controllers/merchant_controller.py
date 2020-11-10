@@ -37,7 +37,7 @@ def update_merchant(id):
     active = 'active' in request.form
     merchant = Merchant(name, active, id)
     merchant_repository.update(merchant)
-    return redirect("/merchants")
+    return redirect("/transactions")
 
 # DELETE '/merchants/<id>'
 @merchants_blueprint.route("/merchants/<id>/delete", methods=['POST'])

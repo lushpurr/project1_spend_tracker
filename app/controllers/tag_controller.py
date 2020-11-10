@@ -41,7 +41,7 @@ def update_tag(id):
     active = 'active' in request.form
     tag = Tag(category, active, id)
     tag_repository.update(tag) 
-    return redirect("/tags")
+    return redirect("/transactions")
 
 # DELETE '/tags/<id>'
 @tags_blueprint.route("/tags/<id>/delete", methods=['POST'])
