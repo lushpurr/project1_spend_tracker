@@ -22,7 +22,7 @@ def create_merchant():
     active = request.form["active"]
     new_merchant = Merchant(name, active)
     merchant_repository.save(new_merchant)
-    return redirect("/merchants")
+    return redirect("/transactions")
 
 # EDIT
 @merchants_blueprint.route("/merchants/<id>/edit", methods=["POST"])
