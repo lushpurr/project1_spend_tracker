@@ -17,7 +17,9 @@
         {% for transaction in transactions %}
         <tr>
             <td> 
-                {{ transaction.merchant.name}}
+                <form action="/merchants/{{ transaction.merchant.id }}/edit" method="POST">
+                    <button class = "btn-link" type="submit">{{ transaction.merchant.name }}</button>
+                </form>
             </td>
             <td></td>
             <td>£{{ "%.2f" % transaction.amount }}</td>
