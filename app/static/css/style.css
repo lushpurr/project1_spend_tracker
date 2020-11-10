@@ -11,11 +11,16 @@ a {
   text-decoration: none;
 }
 
+.add-new-option{
+
+  display:inline-block;
+}
+
 a:hover 
 {
-   color:red;
-   text-decoration:none; 
-   cursor:pointer;  
+  color:red;
+  text-decoration:none; 
+  cursor:pointer;  
 }
 
 .btn-link {
@@ -32,8 +37,8 @@ a:hover
 
 .btn-link:hover {
   color:red;
-   text-decoration:none; 
-   cursor:pointer;  
+  text-decoration:none; 
+  cursor:pointer;  
 }
 
 h1 { 
