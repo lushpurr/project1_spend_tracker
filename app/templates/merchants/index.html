@@ -12,7 +12,10 @@
     {% for merchant in merchants %}
     <section class="list-container">
     <tr>
-        <td> {{ merchant.name }}
+        <td> 
+            <form action="/merchants/{{ merchant.id }}/edit" method="POST">
+                <button class = "btn-link" type="submit">{{ merchant.name }}</button>
+            </form>
         </td>   
         <td>
             {% if merchant.active == true %} <p class="active">Active</p>
