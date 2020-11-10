@@ -17,7 +17,17 @@ h2 {
   font-size: 1.5em;
 }
 
+.splash-screen {
+  position: relative;
+  text-align: center;
+}
 
+.splash-screen-text {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .top_main {
     display: flex;
