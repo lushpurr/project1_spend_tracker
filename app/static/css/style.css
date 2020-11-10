@@ -84,7 +84,7 @@ section.list-container td tr{
 
 /* table css */
 /* alternating table row colours */
-table tr:nth-child(odd){
+table tr:nth-child(odd) {
 	background-color: #FDFCAC;
 }
 
@@ -95,24 +95,31 @@ table td:nth-child(2n){
 table th:nth-child(2n){
   background-color: lightblue;
 }
+
 td {
-  padding: 10px;
+  padding: 1px;
   border-radius: 5%;
 }
 
 th {
-  padding: 10px;
+  padding: 1px;
   border-radius: 5%;
 
+}
+
+.active-column {
+  width:60px;
 }
 
 /* active / inactive colours */
 
 td .active {
   color: green;
+  background-color: lightgreen;
 }
 td .inactive {
   color: red;
+  background-color:lightpink;
 }
 
 /* Menus*/

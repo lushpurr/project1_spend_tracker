@@ -17,7 +17,13 @@
                 <button class = "btn-link" type="submit">{{ tag.category }}</button>
             </form>
         </td>   
-        <td></td>
+        <td> 
+            <!-- displays if tags are active or inactive -->
+            {% if tag.active == true %} <p class="active">Active</p>
+            {% endif %}
+            {% if tag.active == false %}<p class="inactive">Inactive</p>
+            {% endif %}
+        </td>
         <td>
             <form action="/tags/{{ tag.id }}/delete" method="POST">
                 <button type="submit" value="delete" />

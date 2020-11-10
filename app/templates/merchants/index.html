@@ -5,7 +5,7 @@
 <table>
     <tr>
         <th>Name</th>
-        <th></th>
+        <th class="active-column"></th>
         <th>Edit/Delete</th>
     </tr>
     <!-- creates merchants table -->
@@ -18,11 +18,11 @@
             </form>
         </td>   
         <td>
+            <!-- displays if merchants are active or inactive -->
             {% if merchant.active == true %} <p class="active">Active</p>
             {% endif %}
             {% if merchant.active == false %}<p class="inactive">Inactive</p>
             {% endif %}
-
         </td>
         <td>
             <form action="/merchants/{{ merchant.id }}/delete" method="POST">
