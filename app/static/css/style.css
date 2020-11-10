@@ -6,6 +6,36 @@ body {
     margin-right: 0px;
 }
 
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover 
+{
+   color:red;
+   text-decoration:none; 
+   cursor:pointer;  
+}
+
+.btn-link {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: black;
+  padding: 0;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn-link:hover {
+  color:red;
+   text-decoration:none; 
+   cursor:pointer;  
+}
+
 h1 { 
     font-family: 'Phosphate';
     font-size: 3em;
