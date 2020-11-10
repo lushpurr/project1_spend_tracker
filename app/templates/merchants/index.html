@@ -1,12 +1,12 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1>All Merchants (<a href="/merchants/new"><i class="fa fa-plus" aria-hidden="true" title="add new merchant"></i></a>)</h1></th> 
+<h2>All Merchants (<a href="/merchants/new"><i class="fa fa-plus" aria-hidden="true" title="add new merchant"></i></a>)</h2></th> 
 
 <table>
     <tr>
         <th>Name</th>
         <th></th>
-        <th>Icons</th>
+        <th>Edit/Delete</th>
     </tr>
     <!-- creates merchants table -->
     {% for merchant in merchants %}

@@ -1,13 +1,13 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>All Tags  (<a href="/tags/new"><i class="fa fa-plus" aria-hidden="true" title="add new tag"></i></a>)</h1></th> 
+<h2>All Tags  (<a href="/tags/new"><i class="fa fa-plus" aria-hidden="true" title="add new tag"></i></a>)</h2></th> 
 
 <table>
     <tr>
         <th>Tags</th>
         <th></th>
-        <th>Icons</th>
+        <th>Edit/Delete</th>
     </tr>
     <!-- creates tags table -->
     {% for tag in tags %}

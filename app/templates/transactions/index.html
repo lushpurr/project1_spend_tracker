@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>All Transactions (<a href="/transactions/new"><i class="fa fa-plus" aria-hidden="true" title="add new transaction"></i></a>)</h1></th> 
+    <h2>All Transactions (<a href="/transactions/new"><i class="fa fa-plus" aria-hidden="true" title="add new transaction"></i></a>)</h2></th> 
 
     <table>
         <tr>
@@ -11,7 +11,7 @@
             <th></th>   
             <th>Tag (<a href="/tags/new"><i class="fa fa-plus" aria-hidden="true" title="add new tag"></i></a>)</th>
             <th></th>
-            <th>Icons</th>
+            <th>Edit/Delete</th>
         </tr>
         <!-- creates transaction table -->
         {% for transaction in transactions %}
