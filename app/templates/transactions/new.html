@@ -31,9 +31,11 @@
         <label for="tag">Category:</label>
         <select name="tag_id" id="tag">
             {% for tag in tags %}
+            {% if tag.active %}
             <option value= "{{ tag.id }}">
                 {{ tag.category}}
             </option>"
+            {% endif %}
                 
             {% endfor %}
         </select>

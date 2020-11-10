@@ -40,8 +40,6 @@ def create_transaction():
 def edit_transaction(id):
     transaction = transaction_repository.select(id)
 
-    # amount = transaction_repository.select(id)
-
     merchants = merchant_repository.select_all()
 
     tags = tag_repository.select_all()
