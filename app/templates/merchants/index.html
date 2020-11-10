@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1>All Merchants</h1>
+<h1>All Merchants (<a href="/merchants/new"><i class="fa fa-plus" aria-hidden="true" title="add new merchant"></i></a>)</h1></th> 
 
 <table>
     <tr>
@@ -32,7 +32,5 @@
     {% endfor %}
 </table>
 
-<ul>
-    <li><a href="/merchants/new">Create New</a></li>
-</ul>
+
 {% endblock %}
