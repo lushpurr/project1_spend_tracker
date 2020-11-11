@@ -14,9 +14,12 @@
         <label for="merchant">Merchant:</label>
         <select name="merchant_id" id="merchant">
             {% for merchant in merchants %}
-            <option value="{{ merchant.id }}" {% if merchant.id == transaction.merchant.id %} selected {% endif %}>
+                <option value="{{ merchant.id }}" 
+                    {% if merchant.id == transaction.merchant.id %} 
+                    selected 
+                    {% endif %}>
                 {{ merchant.name }}
-            </option>
+                </option>
                 
             {% endfor %}
         </select>
