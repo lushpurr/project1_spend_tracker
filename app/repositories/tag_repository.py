@@ -45,3 +45,9 @@ def update(tag):
     sql = "UPDATE tags SET ( category, active ) = ( %s, %s ) WHERE id = %s"
     values = [tag.category, tag.active, tag.id]
     run_sql(sql, values)
+
+
+def get_categories():
+    sql = "SELECT DISTINCT category FROM tags"
+    results=run_sql(sql)
+    return [category[0] for category in results]

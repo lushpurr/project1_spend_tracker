@@ -1,33 +1,59 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h2>{{ transactions.tag.category }}</h2>
-
-
-{{ transactions.merchant.name }}<br>
-{{ transactions.amount }}<br>
-
-
-
+    <h2>{{ category }} </h2><a href="/transactions">[Remove tag]</a>
 
     
-<table>
-    <tr>
-        <th>Merchant</th>
-        <th></th>
-        <th>Amount</th>
-        <th></th>   
-        <th>Tag</th>
-        <th></th>
-        <th>Edit/Delete</th>
-    </tr>
 
-</table>
+    
+    <table>
+        <tr>
+            <th>Merchant (<a href="/merchants/new"><i class="fa fa-plus" aria-hidden="true" title="add new merchant"></i></a>)</th>
+            <th></th>
+            <th>Amount</th>
+            <th></th>   
+            <th>Tag (<a href="/tags/new"><i class="fa fa-plus" aria-hidden="true" title="add new tag"></i></a>)</th>
+            <th></th>
+            <th>Edit/Delete</th>
+        </tr>
+        <!-- creates transaction table -->
+        {% for transaction in transactions %}
+        {% if category == transaction.tag.category %}
+            
+        
+        <tr>
+            <td> 
+                <form action="/merchants/{{ transaction.merchant.id }}/edit" method="POST">
+                    <button class = "btn-link" type="submit">{{ transaction.merchant.name }}</button>
+                </form>
+            </td>
+            <td></td>
+            <td>£{{ "%.2f" % transaction.amount }}</td>
+            <td></td>
+            <td>
+                <form action="/tags/{{ transaction.tag.id }}/edit" method="POST">
+                    <button class = "btn-link" type="submit">{{ transaction.tag.category }}</button>
+                </form>
+            </td>
+            <td></td>
+            <td>
 
-
-
-
-    </tr> 
+                <form action="/transactions/{{ transaction.id }}/delete" method="POST">
+                    <button type="submit" value="delete" />
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </form>
+    
+                <form action="/transactions/{{ transaction.id }}/edit" method="POST">
+                    <button type="submit" value="delete" />
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </form>
+            </td>   
+        </tr>
+        {% endif %}
+        {% endfor %}
+        
+    </table>
 
 {% endblock content %}

@@ -6,10 +6,10 @@
     <!-- active filters -->
     <section id="filters">
         filter by tag:
-        {% for transaction in transactions %}
+        {% for category in categories %}
             
                 
-                [<a href="/transactions/{{ transaction.id }}">{{ transaction.tag.category }}</a>]
+                [<a href="/transactions/category/{{ category }}">{{ category }}</a>]
                 
             
         {% endfor %}

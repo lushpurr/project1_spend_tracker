@@ -13,7 +13,8 @@ transactions_blueprint = Blueprint("transactions", __name__)
 def transactions():
     transactions = transaction_repository.select_all() # NEW
     tags = tag_repository.select_all()
-    return render_template("transactions/index.html", transactions = transactions, tags=tags)
+    categories = set([transaction.tag.category for transaction in transactions])
+    return render_template("transactions/index.html", transactions = transactions, tags=tags, categories=categories)
 
 # NEW
 # GET '/transactions/new'
@@ -81,3 +82,11 @@ def update_transaction(id):
 def delete_task(id):
     transaction_repository.delete(id)
     return redirect('/transactions')
+
+
+@transactions_blueprint.route("/transactions/category/<category>", methods=['GET'])
+def list_filtered(category):
+    transactions = transaction_repository.select_all() 
+    tags = tag_repository.select_all()
+    return render_template("transactions/show.html", transactions = transactions, tags=tags, category=category)
+
