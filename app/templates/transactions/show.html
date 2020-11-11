@@ -1,3 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h2>{{ transactions.tag.category }}</h2>
 
 
+{{ transactions.merchant.name }}<br>
+{{ transactions.amount }}<br>
+
+
+
+
+    
+<table>
+    <tr>
+        <th>Merchant</th>
+        <th></th>
+        <th>Amount</th>
+        <th></th>   
+        <th>Tag</th>
+        <th></th>
+        <th>Edit/Delete</th>
+    </tr>
+
+</table>
+
+
+
+
+    </tr> 
+
+{% endblock content %}
