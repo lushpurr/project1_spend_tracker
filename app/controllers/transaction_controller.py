@@ -11,7 +11,7 @@ transactions_blueprint = Blueprint("transactions", __name__)
 # GET /transactions
 @transactions_blueprint.route("/transactions")
 def transactions():
-    transactions = transaction_repository.select_all() # NEW
+    transactions = transaction_repository.select_all() 
     tags = tag_repository.select_all()
     categories = set([transaction.tag.category for transaction in transactions])
     return render_template("transactions/index.html", transactions = transactions, tags=tags, categories=categories)
