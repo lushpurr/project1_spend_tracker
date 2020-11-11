@@ -7,6 +7,8 @@ import repositories.tag_repository as tag_repository
 
 transactions_blueprint = Blueprint("transactions", __name__)
 
+#INDEX
+# GET /transactions
 @transactions_blueprint.route("/transactions")
 def transactions():
     transactions = transaction_repository.select_all() # NEW
@@ -33,6 +35,16 @@ def create_transaction():
     new_transaction = Transaction(amount, merchant, tag)
     transaction_repository.save(new_transaction)
     return redirect("/transactions")
+
+#SHOW
+# GET '/transactions/<id>'
+
+@transactions_blueprint.route("/transactions/<id>", methods=["GET"])
+def show_transaction(id):
+    tags = tag_repository.select(id)
+    transactions = transaction_repository.select(id)
+    return render_template("transactions/show.html", tags=tags, transactions=transactions)
+
 
 
 
