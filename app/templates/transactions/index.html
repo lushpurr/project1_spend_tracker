@@ -6,11 +6,11 @@
     <!-- active filters -->
     <section id="filters">
         filter by tag:
-        {% for tag in tags %}
+        {% for transaction in transactions %}
             
-                {% if tag.active %}
-                [<a href="/transactions/{{ tag.id }}">{{ tag.category }}</a>]
-                {% endif %}
+                
+                [<a href="/transactions/{{ transaction.tag.id }}">{{ transaction.tag.category }}</a>]
+                
             
         {% endfor %}
     </section>
