@@ -51,3 +51,9 @@ def update(transaction):
     sql = "UPDATE transactions SET (amount, merchant_id, tag_id) = (%s, %s, %s) WHERE id = %s"
     values = [transaction.amount, transaction.merchant.id, transaction.tag.id, transaction.id]
     run_sql(sql, values)
+
+
+# # return redirect
+# def referrel():
+#     url =  request.referrer
+#     return url
