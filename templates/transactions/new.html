@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<h2>Add a New Retailer</h2>
+<h2>Add a New Transaction</h2>
 
 <form action="/transactions" method="POST">
 
@@ -12,8 +12,9 @@
     </div>
     
 <div >
-    <label for="merchant">Merchant:</label>
+    <label for="merchant">Retailer:</label>
     <select name="merchant_id" id="merchant">
+        <option disabled value="" selected>select a retailer</option>
         {% for merchant in merchants %}
             {% if merchant.active %}
                 <option value= "{{ merchant.id }}">
@@ -25,12 +26,13 @@
 </div>
 
 
-    <div class = "add-new-option"><a href="/merchants/new">Add new merchant</a>
+    <div class = "add-new-option"><a href="/merchants/new">Add new retailer</a>
     </div>
     <br>
     <div class="add-new-option">
         <label for="tag">Tag:</label>
         <select name="tag_id" id="tag">
+            <option disabled value="" selected>select a tag</option>
             {% for tag in tags %}
             {% if tag.active %}
             <option value= "{{ tag.id }}">
