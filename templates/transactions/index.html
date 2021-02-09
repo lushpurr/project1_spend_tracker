@@ -11,6 +11,13 @@
         {% endfor %}
     </section>
 
+    <!-- search transactions -->
+    <form class="search-form" method="GET">
+        <input class=search-form" type="search" placeholder="Search" name="q">
+        <button class="search-button" type="submit">Search</button>
+
+    </form>
+
     
     <table>
         <tr>
@@ -20,7 +27,7 @@
             <th></th>   
             <th>Tag (<a href="/tags/new"><i class="fa fa-plus" aria-hidden="true" title="add new tag"></i></a>)</th>
             <th></th>
-            <th>Edit/Delete</th>
+            <th>Action</th>
         </tr>
         <!-- creates transaction table -->
         {% for transaction in transactions %}
